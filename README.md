@@ -132,6 +132,53 @@ help article and [Build skills](https://learn.chatgpt.com/docs/build-skills) gui
    should come with a **work program**, not silence. If any of that is missing,
    ask a follow-up — the skill's rules require it.
 
+## Improving the skill (make its studies better)
+
+The skill gets better the more you use it. The loop is always the same —
+**first pass → interview → update the skill → re-run** — and you drive it with
+plain English. No coding needed.
+
+**Round 1 — Get a first pass.** Run Step 6 above on your documents. Don't worry if
+the draft is rough; its job is to show you what the skill understood and what's
+missing.
+
+**Round 2 — Get interviewed.** Paste this (tweaked to your project):
+
+> Interview me to make decisions about this feasibility study. Ask me one question
+> at a time, and wait for my answer each time. Cover: the study level we can truly
+> support, the price deck and discount rate to use, cutoffs and key assumptions,
+> which gaps to fill now vs. defer to the work program, and anything in the draft
+> that looks wrong. At the end, give me a numbered list of every decision I made.
+
+Answer in your own words — "use 8% like the last study", "we can't support PFS, drop
+to PEA", "defer tailings to Phase 2". There are no wrong answers; you're the expert
+on your project.
+
+**Round 3 — Fold the learnings into the skill.** Paste this:
+
+> Update the skill to reflect our new learnings. Propose each change as: the file
+> you'd edit, what you'd change, and why — then apply them one at a time and confirm
+> each. Keep changes small and don't touch anything unrelated.
+
+What the AI will typically update (and it should tell you which): assumptions and
+house choices (e.g. your standard discount rate, price-deck source, contingency
+policy) get recorded so future drafts reuse them; unclear checklist items get
+sharper wording; table/chart formats get tuned to what you liked. It should
+**never** bake your project's numbers into the skill as defaults for other projects —
+if you see that, say so and it will move them into project notes instead.
+
+**Round 4 — Re-run and compare.** Ask for the study again and check that your
+decisions stuck (price deck, level, assumptions) and the gaps you deferred moved to
+the work program. If something regressed, say exactly that: *"the opex table lost
+its source line — put it back the way round 2 had it."*
+
+Two safety habits:
+
+- **If you uploaded the skill to ChatGPT** (Step 5), re-zip and re-upload after
+  skill changes, or they'll only exist in your local copy.
+- **Keep a way back.** Before a big round of learnings, copy the repo folder (or
+  download a fresh ZIP). Small approved changes beat big rewrites.
+
 ## Tips and limits
 
 - **One project per chat** keeps answers clean; work section by section for big builds.
