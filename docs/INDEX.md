@@ -9,7 +9,8 @@
 | 2 | `workflow.md` | What is the 6-step ingest → extract → validate → render pipeline? | Running the skill end-to-end |
 | 3 | `data-schema.md` | Which fields must be extracted, with what units/provenance? | Extracting data |
 | 4 | `evaluation.md` | How is skill quality tested (gold outputs, eval cases)? | Adding tests or judging output |
-| 5 | `roadmap.md` | What is built vs planned, in what order? | Planning new work |
+| 5 | `report-anatomy.md` | Where does each fact live in a real NI 43-101 report, and what does "good" look like? | Locating fields before extracting |
+| 6 | `roadmap.md` | What is built vs planned, in what order? | Planning new work |
 
 ## Companion trees (load single files on demand)
 

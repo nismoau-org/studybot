@@ -22,6 +22,7 @@ a template from `templates/`.
    - Domain terms → `references/glossary.md`
    - Section expectations → `references/study-sections-canonical.md`
    - Completeness check → `references/ni-43-101-checklist.md`
+   - Report anatomy (where facts live) → `docs/report-anatomy.md`
 4. **Never** load all of `references/` or `training/` into context by default.
    Load single files on demand.
 
@@ -52,6 +53,6 @@ Currently no scripts are implemented — do extraction manually per schema.
 
 ## Gold example
 
-- Source: `training/output/Lac_des_Iles-PEA-12222021.pdf`
-- Expected output shape: `templates/pea-summary.md`
-- (Gold summary + eval cases to be added under `training/` — see `docs/evaluation.md`.)
+- Sources: `training/output/Marathon-FS-20250328.pdf` (FS) · `training/output/Kami-PFS-20240314.pdf` (PFS) — see `training/README.md` for all four fixtures
+- Expected output shape: `templates/fs-summary.md` / `templates/pfs-summary.md`
+- (Gold summaries + eval cases to be added under `training/` — see `docs/evaluation.md`.)
