@@ -8,8 +8,8 @@ their numbers are never expected content.
 
 ## Layout
 
-- `training/input/` — working inbox for live engagement docs (confidential material
-  stays uncommitted). Currently empty.
+- `../input/` — the inbox for live engagement docs (git-ignored; confidential
+  material stays uncommitted). Eval cases carry their own `corpus/` or `corpus.manifest`.
 - `training/output/` — past manually-built studies as target-shape models
   (see `training/README.md` anti-contamination rule).
 - `training/evals/` — one folder per case: task + corpus pointer + expected checks.

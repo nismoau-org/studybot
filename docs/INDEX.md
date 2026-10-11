@@ -16,9 +16,10 @@
 ## Companion trees (load single files on demand)
 
 - `../references/README.md` → `ni-43-101-checklist.md`, `study-sections-canonical.md`, `glossary.md`
-- `../templates/README.md` → `feasibility-study.md` (deliverable), `pea/pfs/fs-summary.md` (§1 shapes), `comparison-table.md`
-- `../scripts/README.md` → helper scripts (none implemented yet)
+- `../templates/README.md` → `feasibility-study.md` (deliverable), `pdf-style.md` (visual spec), `pea/pfs/fs-summary.md` (§1 shapes), `comparison-table.md`
+- `../scripts/README.md` → helper scripts (`generate_study_pdf.py` implemented)
 - `../training/README.md` → reference artifacts (past studies), eval cases
+- `../input/README.md` → where to drop site documents for a live engagement
 - `../assets/README.md` → static assets
 
 ## Rules

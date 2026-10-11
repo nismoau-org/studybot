@@ -21,16 +21,19 @@ free-form chat answer.
 4. **Validates** completeness against a NI 43-101 / JORC checklist; gaps become a
    budgeted work program to reach the next level.
 
+The deliverable is always a **PDF study document** in NI 43-101 livery (cover, TOC,
+tables, figures) built with `scripts/generate_study_pdf.py` — never a chat-only answer.
+
 ## Setup with ChatGPT (step by step)
 
 ### What you need
 
 - A **ChatGPT account**. Note: OpenAI currently makes Skills available on eligible
   **Business, Enterprise, Healthcare, and Edu** workspaces (subject to admin settings).
-  If you don't see the menu in step 4, check your plan or ask your workspace admin
+  If you don't see the menu in step 5, check your plan or ask your workspace admin
   to enable skills and skill uploading.
 - **This repo** downloaded to your computer (step 2).
-- A **mining technical report PDF** you want analyzed (for step 5).
+- A **mining technical report PDF** you want analyzed (for step 6).
 
 ### Step 1 — Get ChatGPT
 
@@ -56,7 +59,21 @@ cd studybot
 3. Unzip it. You'll get a folder called `studybot` containing `SKILL.md` plus
    `docs/`, `references/`, `templates/`, and other folders.
 
-### Step 3 — Prepare the upload file
+### Step 3 — Put your documents in `input/`
+
+All site documents go in **one place**: the **`input/`** folder at the top of this repo.
+
+- **Working locally or with Codex/CLI:** copy your files into `input/` — drilling
+  reports, testwork, cost estimates, permits, spreadsheets, drawings, any filenames.
+  Optional subfolders (`geology/`, `metallurgy/`, `costs/` …) help on big piles.
+  Details: `input/README.md`.
+- **Working in ChatGPT web/app:** you can instead just **attach files to the chat** —
+  they play the same role.
+- **Private by default:** everything you put in `input/` is git-ignored and stays off
+  GitHub (only `input/README.md` is tracked). Leave `input/` contents out of the
+  skill upload zip in the next step, too.
+
+### Step 4 — Prepare the upload file
 
 ChatGPT installs a skill from a single folder/zip, and this repo's root folder
 **is** the skill (its `SKILL.md` is the entrypoint). Before zipping, leave out
@@ -68,18 +85,18 @@ two things ChatGPT doesn't need:
 
 ```bash
 # from inside the studybot folder:
-zip -r studybot-skill.zip . -x ".git/*" "training/output/*"
+zip -r studybot-skill.zip . -x ".git/*" "training/output/*" "input/*"
 ```
 
 No command line? Right-click the `studybot` folder → **Compress**, then delete
 `training/output/*.pdf` from the copy first if you're tight on size.
 
-### Step 4 — Install the skill in ChatGPT
+### Step 5 — Install the skill in ChatGPT
 
 1. In the ChatGPT sidebar, select **Plugins**.
 2. Open the **Plugin Directory** and select the **Skills** tab.
 3. Select **Create** → **Upload from your computer**.
-4. Choose the `studybot-skill.zip` file from step 3.
+4. Choose the `studybot-skill.zip` file from step 4.
 5. ChatGPT scans the upload (this is automatic). Once it passes, **install** it.
    - If it shows *Needs Review*, check the details before proceeding.
    - If your workspace blocks uploads, your admin needs to allow skill uploading.
@@ -87,11 +104,11 @@ No command line? Right-click the `studybot` folder → **Compress**, then delete
 Reference: OpenAI's [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt)
 help article and [Build skills](https://learn.chatgpt.com/docs/build-skills) guide.
 
-### Step 5 — Build your first study
+### Step 6 — Build your first study
 
 1. Start a new chat.
-2. **Attach your site documents** (reports, PDFs, spreadsheets — as many as apply)
-   and ask for what you want, e.g.:
+2. **Supply your site documents** — from your `input/` folder (step 3) or attached
+   to the chat — and ask for what you want, e.g.:
 
    > Here are our drilling, metallurgy, and cost files for Project X. Build a
    > manifest of these inputs, tell me the highest study level they support,
@@ -123,6 +140,7 @@ help article and [Build skills](https://learn.chatgpt.com/docs/build-skills) gui
   and it never borrows numbers from its example studies.
 - Large document sets are fine as attachments; you don't need to pre-read them.
   If two inputs conflict, the draft should surface both, not pick silently.
+- **Deliverable is a PDF** — ask for the file itself, not just chat text.
 - To share with colleagues, use your workspace's skill-sharing options
   (*Shared with me / Shared by workspace*) rather than re-uploading.
 
@@ -138,6 +156,7 @@ help article and [Build skills](https://learn.chatgpt.com/docs/build-skills) gui
 | `templates/` | Output templates (PEA / PFS / FS / comparison) | AI at runtime |
 | `scripts/` | Deterministic helpers (extract, validate, compare) | AI at runtime |
 | `training/` | `output/` example reports, `evals/` test cases | Builders |
+| `input/` | **Your inbox** — drop site documents here (git-ignored, never committed) | Humans |
 | `assets/` | Diagrams, logos, static files | Humans |
 
 Want to contribute or extend the skill? Read `AGENTS.md` first.

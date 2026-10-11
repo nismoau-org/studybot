@@ -10,7 +10,8 @@
 | GEO-01 | Drilling report, Zone A | 2024-05-10 | … | §7–12 | final |
 | MET-02 | Flotation pilot results | 2023-11-02 | … | §13 | draft |
 
-Rules:
+Rules (conventional inbox: the repo's `../input/` folder — see its README;
+the manifest records the path either way):
 
 - Stable ID prefixes by discipline: `GEO-` geology/drilling/QAQC, `MET-` metallurgy,
   `MINE-` mining/geotech/hydro, `COST-` capex/opex/quotes, `ENV-` permits/ESG/water,

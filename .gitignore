@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 output/*.csv
+# Live engagement docs are confidential by default — never commit them.
+# (Only input/README.md is tracked.)
+input/*
+!input/README.md

@@ -24,6 +24,8 @@
 
 ## Phase 2 — Deterministic helpers
 
+- [x] `scripts/generate_study_pdf.py` (`--demo` / `--content` JSON → NI 43-101-styled
+  PDF per `templates/pdf-style.md`; needs `pip install fpdf2`)
 - [ ] `scripts/build_manifest.py` (doc pile → manifest csv)
 - [ ] `scripts/validate_study.py` (draft vs `data-schema.md` + checklist gate)
 - [ ] Document both in `scripts/README.md`

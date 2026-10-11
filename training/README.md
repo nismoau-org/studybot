@@ -5,10 +5,11 @@
 > Their numbers must **never** appear in a generated study. Any figure in a draft must
 > trace to an input-corpus Doc ID, never to these files.
 
-## input/ — working inbox for live engagement docs (empty)
+## input/ — moved to repo root
 
-Drop the mine-site's documents here during an engagement. Confidential material stays
-uncommitted (never push non-public reports without rights). Never edit in place.
+Live engagement docs now go in the top-level `../input/` folder (git-ignored inbox —
+see its README). This `training/input/` directory is retained only for eval-case
+corpora (see `../docs/evaluation.md`).
 
 ## output/ — reference artifacts (finished studies, manually built in the past)
 

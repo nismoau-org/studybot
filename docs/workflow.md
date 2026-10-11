@@ -2,6 +2,8 @@
 
 1. **Intake + manifest**
    - Register every input per `corpus-intake.md` (ID, type, date, QP/status, §§ covered).
+     Conventional source: the repo's `../input/` folder (git-ignored); in web chat,
+     attached files play the same role.
    - Quarantine unreadable or restricted material; report it as a gap, not content.
 2. **Assess maturity → gate level**
    - Map the corpus against `taxonomy-study-types.md` input gates; declare the PEA/PFS/FS
