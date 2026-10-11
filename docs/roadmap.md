@@ -19,7 +19,13 @@
 - [x] `docs/corpus-intake.md` — manifest, citation, conflict, quarantine rules
 - [x] `templates/feasibility-study.md` — deliverable outline (§1–27 + mine-plan extract)
 - [x] `docs/taxonomy-study-types.md` — input maturity gates per level
-- [ ] First eval cases under `training/evals/` (`manifest-build`, `level-gate`, `gap-detect`)
+- [x] `input/` inbox — git-ignored drop folder + README (`input/README.md`),
+  wired into human README (Step 3), `corpus-intake.md`, `workflow.md`
+- [x] `templates/pdf-style.md` — measured house style (cover, tables, figures, palette)
+- [x] `training/evals/pea-demo/` — first end-to-end demo (synthetic Kestrel Ridge PEA
+  PDF + prompt + checks)
+- [x] Human `README.md` — setup guide (ChatGPT upload flow, `input/` inbox, PDF deliverable)
+- [ ] Remaining eval cases under `training/evals/` (`manifest-build`, `level-gate`, `gap-detect`)
 - [ ] Worked section example (e.g. §21 from sample cost inputs — synthetic, not fixture data)
 
 ## Phase 2 — Deterministic helpers

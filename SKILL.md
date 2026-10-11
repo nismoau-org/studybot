@@ -67,4 +67,6 @@ it doesn't source facts.
 
 - Past studies as structural models: `training/output/` (Otelnuk FS 2015, LDI FS 2018,
   Marathon FS 2025, Kami PFS 2024) — see `training/README.md` anti-contamination rule.
+- Style demo (look at this first): `training/evals/pea-demo/` — synthetic PEA PDF +
+  prompt + checks.
 - Eval format (corpus → section checks): `docs/evaluation.md`.

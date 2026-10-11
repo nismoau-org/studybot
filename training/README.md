@@ -29,9 +29,10 @@ corpora (see `../docs/evaluation.md`).
 | Kipawa **PEA 2012** (~29 MB, `Rep_Matamec-Fin-PEA-000-20120314-SEDAR-Com.pdf`) | `matamec.com` Cloudflare-blocked (403). |
 | Kipawa **FS 2013** (~78–80 MB, `matamecfs2013sedar.pdf` + appendices) | Same as above; `qpmcorp.ca` down; Fury site links to no PDF. |
 
-## evals/ — test cases (empty; format in `../docs/evaluation.md`)
+## evals/ — test cases (format in `../docs/evaluation.md`)
 
-Planned: `manifest-build/`, `level-gate/`, `section-compose/`, `gap-detect/`.
+- `pea-demo/` ✅ — synthetic Kestrel Ridge PEA end-to-end (PDF + prompt + checks).
+- Planned: `manifest-build/`, `level-gate/`, `section-compose/`, `gap-detect/`.
 
 ## Conventions
 

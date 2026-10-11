@@ -163,10 +163,12 @@ Want to contribute or extend the skill? Read `AGENTS.md` first.
 
 ## Status
 
-🚧 **Build phase** — generator pivot in progress: input-manifest rules, level gates,
-deliverable template (`templates/feasibility-study.md`), and four past studies as
-structural models (Otelnuk FS 2015, LDI FS 2018, Marathon FS 2025, Kami PFS 2024)
-are in. Worked examples and eval cases are next. See `docs/roadmap.md`.
+🚧 **Build phase** — generator pivot in progress: input-manifest rules, `input/`
+inbox, level gates, deliverable template (`templates/feasibility-study.md`), PDF
+renderer (`scripts/generate_study_pdf.py` per `templates/pdf-style.md`), first demo
+(`training/evals/pea-demo/`), and four past studies as structural models (Otelnuk FS
+2015, LDI FS 2018, Marathon FS 2025, Kami PFS 2024) are in. Remaining eval cases and
+checklist hardening are next. See `docs/roadmap.md`.
 
 ## Standards
 

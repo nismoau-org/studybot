@@ -22,8 +22,9 @@ their numbers are never expected content.
   with Doc-ID provenance, economics basis stated, gaps listed, zero figures traceable
   to training artifacts. Prefer checkable facts over style opinions.
 
-## Seed cases (to build)
+## Seed cases (pea-demo ✅, rest to build)
 
+0. `pea-demo` ✅ — synthetic corpus → full PEA PDF; checks style, gating, provenance, gaps.
 1. `manifest-build` — messy doc pile → correct manifest with IDs, §§ coverage, quarantines.
 2. `level-gate` — thin corpus (Inferred-only, bench met, factored costs) → PEA cap with evidence.
 3. `section-compose` — cost inputs → §21 table with build-up, basis date, contingency treatment.
