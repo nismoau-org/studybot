@@ -24,6 +24,9 @@ Instructions for any AI agent (or human) modifying this repo.
   deterministic output. Document each script in `scripts/README.md`.
 - **Training data:** never commit non-public reports without rights.
   Record source + date + QP in `training/README.md` for every file.
+- **No contamination:** `training/output/` artifacts are structural models of finished
+  studies. Never source their numbers into a generated study; live engagement docs stay
+  out of version control unless rights-cleared.
 
 ## 3. Allowed / disallowed
 

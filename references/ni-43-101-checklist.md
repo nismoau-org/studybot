@@ -1,6 +1,8 @@
 # NI 43-101 Completeness Checklist (v0.1 — skeleton)
 
-> Mark each item **pass / partial / missing** with page/section evidence.
+> Generation gate: each item ends **composed** (cite study §§), **gap-flagged**
+> (+ work-program item), or **N/A-with-reason**. Evidence is input Doc IDs, not pages
+> of a source report.
 > Detail to be hardened against Form F1 in Roadmap Phase 1.
 
 - [ ] §1 Summary — level stated, key numbers + risks present

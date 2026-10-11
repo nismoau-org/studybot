@@ -1,6 +1,7 @@
 # Taxonomy — Study Types (PEA / PFS / FS)
 
-> Classify **before** extracting. The level determines confidence language and allowed use.
+> Gate the target level **before** composing. The level determines confidence language,
+> allowed use — and what the input corpus must contain. The weakest link sets the level.
 
 | Level | Also called | Resource basis for economics | Cost accuracy* | Engineering | Valid use |
 |---|---|---|---|---|---|
@@ -10,6 +11,18 @@
 
 \* Accuracy bands are industry rules of thumb (AACE Class 4/3/2 analogues), not guarantees.
 Always report the study's **own stated accuracy** when given; otherwise label as indicative.
+
+## Input maturity gates (minimum corpus to claim each level)
+
+| Gate | PEA | PFS | FS |
+|---|---|---|---|
+| Resources | Inferred allowed in economics (disclosed) | M+I drive economics; Inferred excluded | M+I converted to P&P reserves with modifying factors |
+| Metallurgy | Bench-scale recoveries | Pilot testwork, narrowing flowsheet | Pilot/operational, locked flowsheet |
+| Costs | Factored estimates | Partial quotes, AACE-3-ish build-up | Vendor quotes, execution plan, AACE-2-ish |
+| Design | Conceptual options open | Preferred option selected | Detailed design + schedule |
+
+Missing a gate → cap the study at the lower level and put the shortfall in the §26
+work program with a budget.
 
 ## Classification signals
 

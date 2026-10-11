@@ -5,19 +5,20 @@
 | # | File | Question it answers | Load when… |
 |---|---|---|---|
 | 0 | `overview.md` | What does this skill do, for whom, and what is out of scope? | Scoping any task |
-| 1 | `taxonomy-study-types.md` | PEA vs PFS vs FS — accuracy, resource confidence, use limits? | Classifying a report (always) |
-| 2 | `workflow.md` | What is the 6-step ingest → extract → validate → render pipeline? | Running the skill end-to-end |
-| 3 | `data-schema.md` | Which fields must be extracted, with what units/provenance? | Extracting data |
-| 4 | `evaluation.md` | How is skill quality tested (gold outputs, eval cases)? | Adding tests or judging output |
-| 5 | `report-anatomy.md` | Where does each fact live in a real NI 43-101 report, and what does "good" look like? | Locating fields before extracting |
-| 6 | `roadmap.md` | What is built vs planned, in what order? | Planning new work |
+| 1 | `corpus-intake.md` | How are dozens of input docs organized, cited, and conflict-resolved? | Starting any engagement |
+| 2 | `taxonomy-study-types.md` | PEA vs PFS vs FS — accuracy, resource confidence, input gates, use limits? | Gating the target level (always) |
+| 3 | `workflow.md` | What is the 6-step manifest → compose → validate → deliver pipeline? | Running the skill end-to-end |
+| 4 | `data-schema.md` | Which facts must the study establish, with what units/provenance? | Composing sections |
+| 5 | `report-anatomy.md` | What does a finished NI 43-101 study look like, section by section? | Shaping the draft to standard |
+| 6 | `evaluation.md` | How is generation quality tested (corpus → section checks)? | Adding tests or judging output |
+| 7 | `roadmap.md` | What is built vs planned, in what order? | Planning new work |
 
 ## Companion trees (load single files on demand)
 
 - `../references/README.md` → `ni-43-101-checklist.md`, `study-sections-canonical.md`, `glossary.md`
-- `../templates/README.md` → `pea-summary.md`, `pfs-summary.md`, `fs-summary.md`, `comparison-table.md`
+- `../templates/README.md` → `feasibility-study.md` (deliverable), `pea/pfs/fs-summary.md` (§1 shapes), `comparison-table.md`
 - `../scripts/README.md` → helper scripts (none implemented yet)
-- `../training/README.md` → source reports, gold outputs, eval cases
+- `../training/README.md` → reference artifacts (past studies), eval cases
 - `../assets/README.md` → static assets
 
 ## Rules

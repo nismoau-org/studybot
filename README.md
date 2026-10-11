@@ -1,20 +1,25 @@
 # StudyBot — Mining Feasibility Study AI Skill
 
-> Turn dense mining technical reports (PEA / PFS / FS) into structured, comparable, decision-ready summaries.
+> Turn a pile of mine-site technical documents into a structured draft feasibility study.
 
-StudyBot is an **AI Skill** for parsing, structuring, and evaluating
-mining feasibility studies prepared under **NI 43-101** and **JORC** reporting standards.
-You install it into an AI assistant (ChatGPT shown below), hand it a technical
-report PDF, and get back a standardized techno-economic summary with
-completeness checks — instead of a free-form chat answer.
+StudyBot is an **AI Skill** that ingests dozens of technical documents from a mine site
+(geology and drilling reports, metallurgical testwork, geotech/hydro studies, cost
+estimates, environmental and market inputs) and synthesizes them into a **single draft
+feasibility study** (PEA, PFS, or FS) or **mine plan**, structured to **NI 43-101** /
+**JORC** expectations. The example studies in `training/output/` show this done manually
+in the past — the skill learns their structure and applies it to your documents.
+You install it into an AI assistant (ChatGPT shown below), supply your site documents,
+and get back a draft study with completeness gaps and a work program — instead of a
+free-form chat answer.
 
 ## What it does
 
-1. **Ingests** a technical report (PDF) — PEA, PFS, or Feasibility Study.
-2. **Extracts** techno-economic data into a canonical schema (geology, mining, metallurgy,
-   CAPEX/OPEX, economics, ESG, risks).
-3. **Validates** completeness against a NI 43-101 / JORC checklist.
-4. **Emits** a standardized summary using a versioned template.
+1. **Ingests** dozens of site documents and indexes them into a citable manifest.
+2. **Gates the level** — your inputs' maturity decides what can be claimed
+   (PEA vs PFS vs FS); it refuses reserves or bankability the inputs can't support.
+3. **Composes** the study section by section (§§1–27), every claim traced to your documents.
+4. **Validates** completeness against a NI 43-101 / JORC checklist; gaps become a
+   budgeted work program to reach the next level.
 
 ## Setup with ChatGPT (step by step)
 
@@ -82,38 +87,42 @@ No command line? Right-click the `studybot` folder → **Compress**, then delete
 Reference: OpenAI's [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt)
 help article and [Build skills](https://learn.chatgpt.com/docs/build-skills) guide.
 
-### Step 5 — Analyze your first report
+### Step 5 — Build your first study
 
 1. Start a new chat.
-2. **Attach your report PDF** (paperclip / `+` button) and ask for what you want, e.g.:
+2. **Attach your site documents** (reports, PDFs, spreadsheets — as many as apply)
+   and ask for what you want, e.g.:
 
-   > Summarize this feasibility study using the StudyBot template: headline
-   > economics with full basis, resources vs reserves, CAPEX/OPEX, and a
-   > completeness gap list.
+   > Here are our drilling, metallurgy, and cost files for Project X. Build a
+   > manifest of these inputs, tell me the highest study level they support,
+   > and draft the study with full provenance and a gap list.
 
    More examples:
 
-   > Is this report a PEA, PFS, or FS, and what does that imply for how I
-   > should treat its numbers?
+   > Given these inputs, can we claim PFS, or are we capped at PEA? Show your
+   > reasoning per gate.
 
-   > Compare these two attached studies side by side: scale, costs, NPV/IRR
-   > on a stated basis, and top risks.
+   > Draft §21–22 (costs and economics) from the attached cost files at PFS level.
+
+   > Draft a standalone mine plan (§§15–16 + production schedule) from these inputs.
 
 3. ChatGPT picks up the skill automatically when your request matches it
    (that's the skill's `description` doing its job). To force it, mention the
    skill explicitly with `@` and select it.
-4. Check the answer the way you'd check an analyst: every number should cite a
-   **page/section**, economics should state **discount rate, price deck, FX, and
-   tax basis**, and gaps should be listed, not hidden. If any of that is missing,
+4. Check the answer the way you'd check a consultant's draft: every number should cite
+   an **input document + page**, the study level should be **gated with evidence**,
+   economics should state **discount rate, price deck, FX, and tax basis**, and gaps
+   should come with a **work program**, not silence. If any of that is missing,
    ask a follow-up — the skill's rules require it.
 
 ## Tips and limits
 
-- **One report per chat** keeps answers clean; start a fresh chat per project.
-- The skill **reports** the study's price deck — it doesn't forecast prices.
-- It is **not** a Qualified Person sign-off, mine plan, or legal advice on filings.
-- Large reports (400–900 pages) work fine as attachments; you don't need to
-  pre-read or split them.
+- **One project per chat** keeps answers clean; work section by section for big builds.
+- The skill's output is a **draft for QP review** — never a signed or filed report.
+- The skill **reports** price decks from your inputs — it doesn't forecast prices,
+  and it never borrows numbers from its example studies.
+- Large document sets are fine as attachments; you don't need to pre-read them.
+  If two inputs conflict, the draft should surface both, not pick silently.
 - To share with colleagues, use your workspace's skill-sharing options
   (*Shared with me / Shared by workspace*) rather than re-uploading.
 
@@ -135,9 +144,10 @@ Want to contribute or extend the skill? Read `AGENTS.md` first.
 
 ## Status
 
-🚧 **Build phase** — skill scaffolding, four training reports (Otelnuk FS 2015,
-LDI FS 2018, Marathon FS 2025, Kami PFS 2024), and a report-anatomy guide are in.
-Gold summaries and eval cases are next. See `docs/roadmap.md`.
+🚧 **Build phase** — generator pivot in progress: input-manifest rules, level gates,
+deliverable template (`templates/feasibility-study.md`), and four past studies as
+structural models (Otelnuk FS 2015, LDI FS 2018, Marathon FS 2025, Kami PFS 2024)
+are in. Worked examples and eval cases are next. See `docs/roadmap.md`.
 
 ## Standards
 

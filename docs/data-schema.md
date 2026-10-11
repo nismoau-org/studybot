@@ -1,6 +1,7 @@
-# Data Schema — Canonical Extraction Fields (v0.1)
+# Data Schema — Study Data Model (v0.1)
 
-> Every field needs `value + unit + source (page/§)`. Missing → `null` + reason.
+> The facts a generated study must establish. Every field needs `value + unit + source
+> (input Doc ID + page)`. Missing → `null` + gap + work-program item.
 > Units default below; record conversions. Keep pre-tax / post-tax strictly separate.
 
 ## 1. Identity

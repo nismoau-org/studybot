@@ -2,33 +2,38 @@
 
 ## Principle
 
-Every skill change must be checkable against a **source report → gold summary** pair.
+Every skill change must be checkable against an **input corpus → generated section**
+pair. `training/output/` studies are structural references for judging shape and depth —
+their numbers are never expected content.
 
 ## Layout
 
-- `training/input/` — raw source PDFs (immutable, rights-cleared). Currently empty.
-- `training/output/` — source reports used as fixtures (e.g. `Lac_des_Iles-PEA-12222021.pdf`).
-  Gold markdown summaries sit **beside** the PDF with the same stem once written.
-- `training/evals/` — one folder per case: ` lead question + expected checks`.
+- `training/input/` — working inbox for live engagement docs (confidential material
+  stays uncommitted). Currently empty.
+- `training/output/` — past manually-built studies as target-shape models
+  (see `training/README.md` anti-contamination rule).
+- `training/evals/` — one folder per case: task + corpus pointer + expected checks.
 
 ## Eval case format (`training/evals/<case>/`)
 
-- `prompt.md` — the user request (e.g. "Summarize this PEA per pea-summary template").
-- `checks.md` — bullet assertions: study level correct, ≥ N schema fields with provenance,
-  economics basis stated, gaps listed. Prefer checkable facts over style opinions.
-- `source.link` — relative pointer to the `training/` source file (don't duplicate PDFs).
+- `prompt.md` — the user request (e.g. "Draft §22 economics from COST-01..03 at PFS level").
+- `corpus/` or `corpus.manifest` — the input docs (or a manifest pointing at them).
+- `checks.md` — bullet assertions: level gated correctly, ≥ N schema fields populated
+  with Doc-ID provenance, economics basis stated, gaps listed, zero figures traceable
+  to training artifacts. Prefer checkable facts over style opinions.
 
 ## Seed cases (to build)
 
-1. `pea-smoke` — Lac des Iles PEA → fills `pea-summary.md`, flags Inferred reliance.
-2. `level-classify` — given title + §1 only, returns PEA/PFS/FS correctly.
-3. `gap-detect` — report missing tailings/closure detail → checklist marks it missing.
-4. `compare-two` — two summaries → one `comparison-table.md` row each, same-basis or flagged.
+1. `manifest-build` — messy doc pile → correct manifest with IDs, §§ coverage, quarantines.
+2. `level-gate` — thin corpus (Inferred-only, bench met, factored costs) → PEA cap with evidence.
+3. `section-compose` — cost inputs → §21 table with build-up, basis date, contingency treatment.
+4. `gap-detect` — corpus missing tailings/closure inputs → §18/§20 gap-flagged + work-program item.
 
 ## Pass bar (v0.1, manual)
 
-- Correct study level 100% of seed cases.
-- Zero invented numbers (spot-check 5 figures → all trace to a page/section).
-- Every economics output states discount rate + price deck + tax basis or says "not disclosed."
+- Correct level gating 100% of seed cases.
+- Zero invented numbers (spot-check 5 figures → all trace to a corpus Doc ID + page).
+- Zero contamination (no figure traceable to a `training/output/` artifact).
+- Every economics output states discount rate + price deck + tax basis or says "not establishable."
 
 Automated scoring (scripts + CI) is a roadmap item — see `roadmap.md`.
